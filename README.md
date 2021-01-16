@@ -58,19 +58,50 @@ You can use `mnist.py` and `fashion_mnist.py` for training the models with mnist
 - Learning Rate : 0.01
 - Epochs : 16
 
-|   Model   |   CIFAR-10   |     MNIST    | FashionMNIST |
-|:---------:|:------------:|:------------:|:------------:|
-|  AlexNet  |     60.04    |              |              |
-| WRN-16-10 |     88.54    |              |              |
-| WRN-28-10 |     88.94    |              |              |
-|  ResNet9  |     88.00    |     99.29    |     93.33    |
-| ResNet18  |     87.67    |     99.39    |     92.82    |
-| ResNet34  |     87.52    |              |              |
-| ResNet50  |     85.71    |              |              |
-|   VGG11   |     85.71    |              |              |
-|   VGG13   |     88.74    |              |              |
-|   VGG16   |     88.34    |              |              |
-|   VGG19   |     87.63    |              |              |
+|   Model   | CIFAR-10(%)  |   MNIST(%)   | FashionMNIST(%) |
+|:---------:|:------------:|:------------:|:---------------:|
+|  AlexNet  |     79.94    |              |                 |
+|  ResNet9  |     88.00    |     99.29    |      93.33      |
+| ResNet18  |     87.67    |     99.39    |      92.82      |
+| ResNet34  |     87.52    |              |                 |
+| ResNet50  |     85.71    |              |                 |
+| WRN-16-10 |     88.54    |              |                 |
+| WRN-28-10 |     88.94    |              |                 |
+|   VGG11   |     85.71    |              |                 |
+|   VGG13   |     88.74    |              |                 |
+|   VGG16   |     88.34    |              |                 |
+|   VGG19   |     87.63    |              |                 |
+
+- AlexNet / CIFAR-10
+![IMG](doc/cifar10_alexnet_adam.png)
+- ResNet9 / CIFAR-10
+![IMG](doc/cifar10_resnet9_adam.png)
+- ResNet18 / CIFAR-10
+![IMG](doc/cifar10_resnet18_adam.png)
+- ResNet34 / CIFAR-10
+![IMG](doc/cifar10_resnet34_adam.png)
+- ResNet50 / CIFAR-10
+![IMG](doc/cifar10_resnet50_adam.png)
+- WideResNet 16-10 / CIFAR-10
+![IMG](doc/cifar10_wrn-16-10_adam.png)
+- WideResNet 28-10 / CIFAR-10
+![IMG](doc/cifar10_wrn-28-10_adam.png)
+- VGG 11 / CIFAR-10
+![IMG](doc/cifar10_vgg11_adam.png)
+- VGG 13 / CIFAR-10
+![IMG](doc/cifar10_vgg13_adam.png)
+- VGG 16 / CIFAR-10
+![IMG](doc/cifar10_vgg16_adam.png)
+- VGG 19 / CIFAR-10
+![IMG](doc/cifar10_vgg19_adam.png)
+- ResNet9 / MNIST
+![IMG](doc/fashion_mnist_resnet9_adam.png)
+- ResNet18 / MNIST
+![IMG](doc/fashion_mnist_resnet18_adam.png)
+- ResNet9 / FashionMNIST
+![IMG](doc/mnist_resnet9_adam.png)
+- ResNet18 / FashionMNIST
+![IMG](doc/mnist_resnet18_adam.png)
 
 ### License
 
@@ -78,5 +109,5 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ## Acknowledgements
 
-ResNet, WideResNet, and VGG model is ported from [bearpaw/pytorch-classification](https://github.com/bearpaw/pytorch-classification)
+AlexNet, ResNet, WideResNet, and VGG model is ported from [bearpaw/pytorch-classification](https://github.com/bearpaw/pytorch-classification)
 
