@@ -1,7 +1,8 @@
-'''AlexNet for CIFAR10. FC layers are removed. Paddings are adjusted.
-Without BN, the start learning rate should be 0.01
-(c) YANG, Wei 
-'''
+"""Alexnet for cifar dataset.
+Ported form
+https://github.com/bearpaw/pytorch-classification/blob/master/models/cifar/alexnet.py
+"""
+
 import torch.nn as nn
 
 
@@ -31,25 +32,31 @@ class AlexNet(nn.Module):
         super(AlexNet, self).__init__()
         in_dim = 1 if grayscale else 3
         self.features = nn.Sequential(
-            nn.Conv2d(in_dim, 64, kernel_size=11, stride=4, padding=5),
+            nn.Conv2d(in_dim, 64, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=3, stride=2),
+            nn.Conv2d(64, 128, kernel_size=3, padding=2),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=2, stride=2),
-            nn.Conv2d(64, 192, kernel_size=5, padding=2),
+            nn.Conv2d(128, 256, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
-            nn.MaxPool2d(kernel_size=2, stride=2),
-            nn.Conv2d(192, 384, kernel_size=3, padding=1),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(384, 256, kernel_size=3, padding=1),
+            nn.Conv2d(256, 256, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
             nn.Conv2d(256, 256, kernel_size=3, padding=1),
             nn.ReLU(inplace=True),
             nn.MaxPool2d(kernel_size=2, stride=2),
         )
-        self.classifier = nn.Linear(256, num_classes)
+        self.classifier = nn.Sequential(
+            nn.Linear(256 * 4 * 4, 256),
+            nn.ReLU(inplace=True),
+            nn.Linear(256, 256),
+            nn.ReLU(inplace=True),
+            nn.Linear(256, num_classes),
+        )
 
     def forward(self, x):
         x = self.features(x)
-        x = x.view(x.size(0), -1)
+        x = x.view(x.size(0), 256 * 4 * 4)
         x = self.classifier(x)
         return x
 
