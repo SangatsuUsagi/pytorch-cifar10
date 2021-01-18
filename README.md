@@ -51,9 +51,11 @@ $ ./cifar10.py --model vgg11 --resume --epochs 50
 
 This project optionally supports MNIST/FashinMNIST dataset.  
 You can use `mnist.py` and `fashion_mnist.py` for training the models with mnist dataset.  
+AlexNet and VGG is tailored for 32x32 input, so that these models can't use with MNIST/FashionMNIST.
 
 ### Results
 
+- Input image data is not normalized (To use weight with AI SoC)
 - Optimizer : Adam
 - Learning Rate : 0.01
 - Epochs : 16
@@ -65,7 +67,9 @@ You can use `mnist.py` and `fashion_mnist.py` for training the models with mnist
 | ResNet18  |     87.67    |     99.39    |      92.82      |
 | ResNet34  |     87.52    |              |                 |
 | ResNet50  |     85.71    |              |                 |
+| WRN-16-8  |     89.05    |              |                 |
 | WRN-16-10 |     88.54    |              |                 |
+| WRN-28-8  |     88.53    |              |                 |
 | WRN-28-10 |     88.94    |              |                 |
 |   VGG11   |     85.71    |              |                 |
 |   VGG13   |     88.74    |              |                 |
@@ -82,8 +86,12 @@ You can use `mnist.py` and `fashion_mnist.py` for training the models with mnist
 ![IMG](doc/cifar10_resnet34_adam.png)
 - ResNet50 / CIFAR-10
 ![IMG](doc/cifar10_resnet50_adam.png)
+- WideResNet 16-8 / CIFAR-10
+![IMG](doc/cifar10_wrn-16-8_adam.png)
 - WideResNet 16-10 / CIFAR-10
 ![IMG](doc/cifar10_wrn-16-10_adam.png)
+- WideResNet 28-8 / CIFAR-10
+![IMG](doc/cifar10_wrn-28-8_adam.png)
 - WideResNet 28-10 / CIFAR-10
 ![IMG](doc/cifar10_wrn-28-10_adam.png)
 - VGG 11 / CIFAR-10

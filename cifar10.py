@@ -13,7 +13,7 @@ from models.alexnet import alexnet
 from models.mobilenet import mobilenetv1
 from models.resnet import resnet9, resnet18, resnet34, resnet50, resnet101, resnet152
 from models.vgg import vgg11, vgg13, vgg16, vgg19
-from models.wrn import wrn_16_10, wrn_28_10
+from models.wrn import wrn_16_8, wrn_28_8, wrn_16_10, wrn_28_10
 
 
 class Params:
@@ -104,6 +104,8 @@ def main():
             "vgg13",
             "vgg16",
             "vgg19",
+            "wrn_16_8",
+            "wrn_28_8",
             "wrn_16_10",
             "wrn_28_10",
         ],

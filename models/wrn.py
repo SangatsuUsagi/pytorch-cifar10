@@ -122,11 +122,27 @@ class WideResNet(nn.Module):
         return self.fc(out)
 
 
+def wrn_16_8(**kwargs):
+    """
+    Constructs a Wide Residual Networks 16-10.
+    """
+    model = WideResNet(depth=16, widen_factor=8, **kwargs)
+    return model
+
+
 def wrn_16_10(**kwargs):
     """
     Constructs a Wide Residual Networks 16-10.
     """
     model = WideResNet(depth=16, widen_factor=10, **kwargs)
+    return model
+
+
+def wrn_28_8(**kwargs):
+    """
+    Constructs a Wide Residual Networks 28-10.
+    """
+    model = WideResNet(depth=28, widen_factor=8, **kwargs)
     return model
 
 
