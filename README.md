@@ -55,14 +55,14 @@ AlexNet and VGG is tailored for 32x32 input, so that these models can't use with
 
 ### Results
 
-- Input image data is not normalized (To use weight with AI SoC)
+- Input image data is not normalized (To use weight with deploying model to AI SoCs)
 - Optimizer : Adam
 - Learning Rate : 0.01
 - Epochs : 16
 
 |   Model   | CIFAR-10(%)  |   MNIST(%)   | FashionMNIST(%) |
 |:---------:|:------------:|:------------:|:---------------:|
-|  AlexNet  |     79.94    |              |                 |
+|  AlexNet  |     79.88    |              |                 |
 |  ResNet9  |     88.00    |     99.29    |      93.33      |
 | ResNet18  |     87.67    |     99.39    |      92.82      |
 | ResNet34  |     87.52    |              |                 |
